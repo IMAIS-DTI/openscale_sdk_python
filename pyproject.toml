@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openscale-sdk"
+version = "0.1.0"
+description = "Run-time helpers for OpenScale automations: configuration, dry run, masked logs, summary, artifacts and API client"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+dependencies = []
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: Apache Software License", "Operating System :: OS Independent"]
+
+[project.optional-dependencies]
+manifest = ["PyYAML>=6"]
+
+[project.urls]
+Contract = "https://openscale.clickip.com.br/guias/automacoes-como-codigo/"
+
+[tool.setuptools]
+packages = ["openscale_sdk"]
