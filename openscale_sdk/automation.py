@@ -26,7 +26,7 @@ import traceback
 from pathlib import Path
 from typing import Any, Callable, Mapping, Optional
 
-from .client import OpenScaleClient
+from .client import OpenScaleClient, OpenScaleError
 from .masking import MASK, Masker
 
 ARTIFACT_NAME = re.compile(r"^(?!\.)[A-Za-z0-9._-]{1,100}$")
@@ -166,6 +166,10 @@ class Automation:
         except ConfigError as exc:
             self.log(f"configuration: {exc}", "error")
             return EXIT_CONFIG
+        except OpenScaleError as exc:
+            # erro esperado da API (permissão, rede): uma linha basta, sem traceback
+            self.log(str(exc), "error")
+            return EXIT_FAILURE
         except KeyboardInterrupt:
             self.log("interrupted", "error")
             return EXIT_INTERRUPTED

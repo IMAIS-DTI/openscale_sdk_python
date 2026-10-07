@@ -9,7 +9,7 @@ from .client import DryRunSkipped, OpenScaleClient, OpenScaleError
 from .manifest import load_manifest, validate_manifest
 from .masking import MASK, mask_email, mask_phone
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "Automation", "ConfigError", "OpenScaleClient", "OpenScaleError", "DryRunSkipped",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 — 2026-10-07
+
+- `run`: an `OpenScaleError` (permission, network) is logged as one line, without traceback; exit 1.
+
 ## 0.1.0 — 2026-10-07
 
 - `Automation`: environment variables (required, default, secret, cast), dry run, masked log, summary

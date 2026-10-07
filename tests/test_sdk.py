@@ -41,6 +41,13 @@ class ConfigTests(unittest.TestCase):
         self.assertTrue(app_with({"OPENSCALE_DRY_RUN": "true"})[0].dry_run)
         self.assertFalse(app_with({"DRY_RUN": "0"})[0].dry_run)
 
+    def test_api_error_is_one_line(self):
+        app, _, err = app_with({})
+        def falha():
+            raise OpenScaleError(403, "sem permissão")
+        self.assertEqual(app.run(falha), EXIT_FAILURE)
+        self.assertEqual(err.getvalue().strip(), "[error] OpenScale HTTP 403: sem permissão")
+
     def test_exit_codes(self):
         self.assertEqual(app_with({})[0].run(lambda: None), EXIT_OK)
         self.assertEqual(app_with({})[0].run(lambda: 3), 3)

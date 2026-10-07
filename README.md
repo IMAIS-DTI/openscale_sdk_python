@@ -12,7 +12,7 @@ The run-time contract (environment, folders, limits, `openscale.yaml`) is descri
 Pin a tag in the automation's `requirements.txt`:
 
 ```
-openscale-sdk @ git+https://github.com/IMAIS-DTI/openscale_sdk_python@v0.1.0
+openscale-sdk @ git+https://github.com/IMAIS-DTI/openscale_sdk_python@v0.1.1
 ```
 
 The runner builds a virtual environment from `requirements.txt` and reuses it between runs.
@@ -58,7 +58,7 @@ Never print a secret in a transformed form (split, encoded): masking only recogn
 ## Validate `openscale.yaml` in CI
 
 ```bash
-pip install "openscale-sdk[manifest] @ git+https://github.com/IMAIS-DTI/openscale_sdk_python@v0.1.0"
+pip install "openscale-sdk[manifest] @ git+https://github.com/IMAIS-DTI/openscale_sdk_python@v0.1.1"
 python -m openscale_sdk validate .
 ```
 

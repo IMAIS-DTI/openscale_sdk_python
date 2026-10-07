@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openscale-sdk"
-version = "0.1.0"
+version = "0.1.1"
 description = "Run-time helpers for OpenScale automations: configuration, dry run, masked logs, summary, artifacts and API client"
 readme = "README.md"
 license = { text = "Apache-2.0" }
